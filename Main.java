@@ -1,36 +1,80 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-class Main {
-  
-  public static void main(String[] args) {
-    try {
-      Scanner scan = new Scanner(System.in);
-      System.out.println("Wpisz 1 aby dodać nowego studenta");
-      System.out.println("Wpisz 2 aby wypisać listę studentów");
-        int liczba = scan.nextInt();
+class Main 
+{
+  public static Scanner scan = new Scanner(System.in);
+  public static void main(String[]args)
+  {
+    while(true)
+    {
+    int tryb =0;
+      tryb=menu();
 
-      switch(liczba)
+      switch(tryb) 
       {
         case 1:
-          
+          {
+            W1();
           break;
+          }
+         
         case 2:
-          
-          break;
-        default:
-    
+          {
+            W2();
+            break;
+          }
+        case 0:
+          {
+            return;
+          }
+     
+      }
       
-      Service1 s = new Service1();
-      s.addStudent(new Student("Krzysztof", 20));
-      s.addStudent(new Student("Janusz", 40));
-
-      var students = s.getStudents();
-      for(Student current : students) {
-        System.out.println(current.ToString());
-      }}
-    } catch (IOException e) {
+      }
 
     }
+  public static int menu()
+  {
+    int liczba =0;
+    System.out.println();
+     System.out.println("Wpisz 1 aby dodać nowego studenta");
+      System.out.println("Wpisz 2 aby wypisać listę studentów");
+    liczba =scan.nextInt();
+return liczba;
+  }
+  public static void W1()
+  {
+    try
+      {
+        Service1 s = new Service1();
+        String imie;
+        int wiek;
+        scan.nextLine();
+        System.out.println("Podaj imie:");
+        imie =scan.nextLine();
+        System.out.println("Podaj wiek:");
+        wiek =scan.nextInt();
+        s.addStudent(new Student(imie,wiek));
+        System.out.println("Dodano studenta");
+        
+      }
+    catch(IOException e)
+      {
+        
+      }
+  }
+  public static void W2()
+  {
+    try
+      {
+        System.out.println("Lista studentów:");
+        Service1 s = new Service1();
+         var students = s.getStudents();                    for (Student current : students) {            
+           System.out.println(current.ToString());             }}
+    catch(IOException e)
+      {
+        
+      }
   }
 }
