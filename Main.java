@@ -24,6 +24,11 @@ class Main
             W2();
             break;
           }
+        case 3:
+          {
+            W3();
+            break;
+          }
         case 0:
           {
             return;
@@ -81,5 +86,29 @@ return liczba;
       {
         
       }
+  }
+  public static void W3() throws IOException
+  {
+    try
+      {
+        String imie;
+        scan.nextLine();
+        System.out.print("Podaj imię:");
+        imie=scan.nextLine();
+        var student =(new Service1().findStudentByName(imie));
+        if(student==null)
+        {
+          System.out.println("Brak studenta");
+        }
+        else
+        {
+          System.out.println(student.ToString());
+        }
+        }  
+    catch(IOException e)
+      {
+        
+      }
+    
   }
 }

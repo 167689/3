@@ -30,7 +30,7 @@ public class Service1 {
     return ret;
   }
 
-  public Student findStudentByName(String name) {
+  public Student findStudentByName(String name)throws IOException {
     return null;
   }
 }
