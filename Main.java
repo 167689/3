@@ -50,12 +50,17 @@ return liczba;
         Service1 s = new Service1();
         String imie;
         int wiek;
+        String data;
         scan.nextLine();
         System.out.println("Podaj imie:");
         imie =scan.nextLine();
         System.out.println("Podaj wiek:");
-        wiek =scan.nextInt();
-        s.addStudent(new Student(imie,wiek));
+        wiek =scan.nextInt();System.out.println("Podaj datę urodzenia:");
+        data =scan.nextLine();
+        data =scan.nextLine();
+        
+        
+        s.addStudent(new Student(imie,wiek,data));
         System.out.println("Dodano studenta");
         
       }
