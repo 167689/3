@@ -31,6 +31,12 @@ public class Service1 {
   }
 
   public Student findStudentByName(String name)throws IOException {
+    var students=this.getStudents();
+    for (Student current:students) {
+      if( current.GetName().equals(name)){
+        return current;
+      }
+    }
     return null;
   }
 }

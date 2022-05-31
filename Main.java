@@ -26,7 +26,10 @@ class Main
           }
         case 3:
           {
+            try
+              {
             W3();
+                }catch (IOException e){}
             break;
           }
         case 0:
@@ -45,6 +48,7 @@ class Main
     System.out.println();
      System.out.println("Wpisz 1 aby dodać nowego studenta");
       System.out.println("Wpisz 2 aby wypisać listę studentów");
+    System.out.println("Wpisz 3 aby wyszukać studenta po imieniu");
     liczba =scan.nextInt();
 return liczba;
   }
